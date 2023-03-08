@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+void nhapmang(int a[], int n) {
+	for (int i = 0; i <= n; i++) {
+		cout << "nhap a["<<i<<"]= ";
+		cin >> a[i];
+	}
+}
+void xuatmang(int a[], int n) {
+	for (int i = 0; i <= n; i++) {
+		cout << a[i] << " ";
+	}
+}
+void sapxep(int a[], int n) {
+	for (int i = 0; i <= n - 1; i++) {
+		for (int j = i; j <= n; j++) {
+			if (a[i] < a[j]) {
+				swap(a[i], a[j]);
+			}
+			
+		}
+	}
+}
+int main() {
+	int n;
+	int a[1000];
+	cout << "Nhap n: "<<endl;
+	cin >> n;
+	nhapmang(a, n);
+	sapxep(a, n);
+	cout << "mang sau khi giam la: " << endl;
+	xuatmang(a, n);
+	return 0;
+}
